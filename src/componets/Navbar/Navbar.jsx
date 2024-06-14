@@ -1,32 +1,36 @@
-import React, { useContext } from 'react'
+import React  from 'react'
 import { Link } from 'react-router-dom'
 import CartWidget from '../CartWidget/CartWidget'
 import { useLocation } from 'react-router-dom'
 import useCategories from '../../hooks/useCategories'
-import ProductsContext from '../../context/products/ProductsContext'
+import Select from '../Select/CustomSelect'
+import './Navbar.css'
+import CustomSelect from '../Select/CustomSelect'
+
 
 const Navbar = () => {
 
   const {categories} = useCategories()
-  const {handleCategorySelected} = useContext(ProductsContext)
   const location = useLocation()
 
   return (
-    <nav>
-        <Link to="/">Productos</Link>
-        <Link to="/cart"><CartWidget/></Link>
-        <Link to="/orders">Ordenes</Link>
-        {location.pathname ==="/" && (
-          <select  onChange={(e)=> handleCategorySelected(e.target.value)}>
-            {categories.map(category => <option selected={category.title === "Todos"} key={category.id} value={category.title}>
-                                          {category.title}
-                                        </option> 
-            )}
-          </select>
-        )}
-        
-          
-    </nav>
+    <>
+           <nav className="navbar">
+            <div className='links'>
+              <Link className='link' to="/">Productos</Link>
+              <Link className='link' to="/orders">Ordenes</Link>
+              <Link className='link'  to="/cart"><CartWidget/></Link>
+            </div>      
+          </nav>
+         
+            {location.pathname ==="/" && (
+                         <div className='selectContainer'>
+                            <CustomSelect categories={categories}/>
+                          </div>
+                      )}
+
+    </>
+ 
   )
 }
 

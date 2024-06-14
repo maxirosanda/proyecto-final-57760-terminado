@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import ItemList from '../ItemList/ItemList'
 import ProductsContext from '../../context/products/ProductsContext'
+import './ItemListContainer.css'
 
 const ItemListContainer = () => {
 
@@ -8,7 +9,7 @@ const ItemListContainer = () => {
 
     
   return (
-    <div>
+    <div className='cardContainer'>
         {products.map(product => <ItemList key={product.id} product={product}/>)}
     </div>
   )

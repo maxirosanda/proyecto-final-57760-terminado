@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import Count from '../Count/Count'
 import CartContext from '../../context/cart/CartContext'
 import { useNavigate } from 'react-router-dom'
+import './ItemDetail.css'
 
 const ItemDetail = ({product}) => {
 
@@ -16,8 +17,9 @@ const ItemDetail = ({product}) => {
 
  
   return (
-    <div>
+    <div className='detail'>
         <h3>{product.title}</h3>
+        <img src={product.image}/>
         <p>{product.description}</p>
         <Count count={count} handleCount={setCount} stock={product.stock}/>
         <button onClick={addItem }>Carrito</button>

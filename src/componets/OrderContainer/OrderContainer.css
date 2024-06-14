@@ -1,0 +1,12 @@
+.orderContainer{
+    background-color: var(--primary-color);
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+
+}
+
+.order{
+    color: white;
+    padding: 10px;
+}

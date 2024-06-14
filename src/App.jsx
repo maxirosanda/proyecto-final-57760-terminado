@@ -7,7 +7,8 @@ import Navbar from './componets/Navbar/Navbar'
 import CartProvider from './context/cart/CartProvider'
 import OrderContainer from './componets/OrderContainer/OrderContainer'
 import ProductsProvider from './context/products/ProductsProvider'
-import Checkout from './componets/Checkout/Checkout'
+import CheckoutContainer from './componets/CheckoutContainer/CheckoutContainer'
+import './fontawesome'; 
 
 function App() {
 
@@ -22,7 +23,7 @@ function App() {
               <Route path='/detail/:id' element={<ItemDetailContainer/>}/>
               <Route path='/cart' element={<ItemCartContainer/>}/>
               <Route path='/orders' element={<OrderContainer/>}/>
-              <Route path='/checkout' element={<Checkout/>}/>
+              <Route path='/checkout' element={<CheckoutContainer/>}/>
             </Routes>
           </CartProvider>
         </ProductsProvider>

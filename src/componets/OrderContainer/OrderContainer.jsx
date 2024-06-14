@@ -1,5 +1,6 @@
 import React ,{useState,useEffect} from 'react'
 import { collection,getDocs,getFirestore } from 'firebase/firestore'
+import './OrderContainer.css'
 
 const OrderContainer = () => {
 
@@ -15,8 +16,8 @@ const OrderContainer = () => {
     },[])
 
   return (
-    <div>
-        {orders.map(order => <div key={order.id}><p>{order.id}</p></div>)}
+    <div className='orderContainer'>
+        {orders.map(order => <div className='order' key={order.id}><p>Numero de orden: {order.id}</p></div>)}
     </div>
   )
 }

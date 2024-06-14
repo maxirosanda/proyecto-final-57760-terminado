@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import './Checkout.css'
 
 const Checkout = ({completeOrder}) => {
 
@@ -6,7 +7,7 @@ const Checkout = ({completeOrder}) => {
     const [telBuyer,setTelBuyer] = useState("")
     const [emailBuyer,setEmailBuyer] = useState("")
 
-    const handleCompleteOrder = () => {
+    const handleCompleteOrder = async () => {
 
         const buyer = {
             name:nameBuyer,
@@ -14,10 +15,10 @@ const Checkout = ({completeOrder}) => {
             email:emailBuyer
         }
 
-        completeOrder(buyer)
+        await completeOrder(buyer)
     }
   return (
-    <div>
+    <div className='checkoutBuyer'>
         <input type="text" value={nameBuyer} onChange={(e)=>setNameBuyer(e.target.value)} placeholder='ingrese su nombre y apellido' />
         <input type="text" value={telBuyer} onChange={(e)=>setTelBuyer(e.target.value)} placeholder='ingrese su telefono' />
         <input type="text" value={emailBuyer} onChange={(e)=>setEmailBuyer(e.target.value)} placeholder='ingrese su email' />

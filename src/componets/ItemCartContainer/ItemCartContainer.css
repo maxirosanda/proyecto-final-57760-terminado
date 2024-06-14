@@ -1,0 +1,32 @@
+.container{
+    display: flex;
+    height: 100vh;
+    margin: 20px;
+    align-items: start;
+}
+
+.itemCartContainer{
+    width: 60%;
+}
+.checkout{
+    width: 40%;
+    margin: 20px;
+    padding: 20px;
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    border-radius: 5px;
+}
+.checkout p {
+    color: white;
+}
+
+.checkout button {
+    background-color: white;
+    color: var(--primary-color);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 10px;
+}

@@ -1,0 +1,23 @@
+.container{
+    position: relative;
+}
+
+.cart{
+    font-size: 24px;
+}
+
+.counter{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    padding: 5px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: -10px;
+    bottom: -10px;
+
+}

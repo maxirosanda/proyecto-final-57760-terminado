@@ -1,0 +1,52 @@
+
+.selectWrapper {
+  position: relative;
+  display: flex;
+  width: 200px;
+  user-select: none; /* Evita la selección de texto accidental */
+  cursor: pointer;
+}
+
+.selectedOption {
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  padding-left: 0;
+  font-size: 16px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon {
+  margin-left: 10px;
+  pointer-events: none; /* Permite hacer clic en el select */
+  color: white;
+}
+
+.optionsList {
+  width: 200px;
+  position: absolute;
+  top: 100%;
+  left: -10px;
+  right: 0;
+  background-color: var(--primary-color);
+  border: none;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  max-height: 150px; /* Ajusta la altura máxima del desplegable */
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.option {
+  padding: 10px;
+  cursor: pointer;
+  color: white;
+}
+
+.option:hover {
+  color: #a8a3a3;
+}
