@@ -1,9 +1,10 @@
 .container{
     position: relative;
+    margin: 10px;
 }
 
 .cart{
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .counter{

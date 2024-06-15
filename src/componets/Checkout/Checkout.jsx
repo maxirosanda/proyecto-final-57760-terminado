@@ -7,8 +7,8 @@ const Checkout = ({completeOrder}) => {
     const [telBuyer,setTelBuyer] = useState("")
     const [emailBuyer,setEmailBuyer] = useState("")
 
-    const handleCompleteOrder = async () => {
-
+    const handleCompleteOrder = async (e) => {
+        e.preventDefault()
         const buyer = {
             name:nameBuyer,
             tel:telBuyer,
@@ -18,12 +18,12 @@ const Checkout = ({completeOrder}) => {
         await completeOrder(buyer)
     }
   return (
-    <div className='checkoutBuyer'>
-        <input type="text" value={nameBuyer} onChange={(e)=>setNameBuyer(e.target.value)} placeholder='ingrese su nombre y apellido' />
-        <input type="text" value={telBuyer} onChange={(e)=>setTelBuyer(e.target.value)} placeholder='ingrese su telefono' />
-        <input type="text" value={emailBuyer} onChange={(e)=>setEmailBuyer(e.target.value)} placeholder='ingrese su email' />
-        <button onClick={handleCompleteOrder}>Finalizar Compra</button>
-    </div>
+    <form className='checkoutBuyer' onSubmit={(e)=>handleCompleteOrder(e)}>
+        <input type="text" value={nameBuyer} onChange={(e)=>setNameBuyer(e.target.value)} placeholder='ingrese su nombre y apellido' required />
+        <input type="number" value={telBuyer} onChange={(e)=>setTelBuyer(e.target.value)} placeholder='ingrese su telefono' />
+        <input type="email" value={emailBuyer} onChange={(e)=>setEmailBuyer(e.target.value)} placeholder='ingrese su email' />
+        <button type='submit' >Finalizar Compra</button>
+    </form>
   )
 }
 

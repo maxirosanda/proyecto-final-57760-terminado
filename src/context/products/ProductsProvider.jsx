@@ -39,14 +39,18 @@ const ProductsProvider = ({children}) => {
     
       const getProductById = async (id) => {
         try {
+            setLoading(true)
             const db = getFirestore()
             const docRef = doc(db, "products", id)
             const docSnap = await getDoc(docRef)
             if (docSnap.exists()) {
+                setLoading(false)
                 return { id: docSnap.id, ...docSnap.data() }
             } else {
+                setLoading(false)
                 throw new Error("Product not found")
             }
+            
         } catch (error) {
             setError(error)
             setLoading(false)
@@ -55,7 +59,7 @@ const ProductsProvider = ({children}) => {
     };
 
   return (
-    <ProductsContext.Provider value={{products,handleCategorySelected, getProductById}}>
+    <ProductsContext.Provider value={{products,handleCategorySelected, getProductById,loading,error}}>
         {children}
     </ProductsContext.Provider>
   )

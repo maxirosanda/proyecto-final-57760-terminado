@@ -1,0 +1,11 @@
+
+    .emptyItemsContainer {
+      display: flex;
+      justify-content: 'center';
+      align-items: 'center';
+    }
+    .errorMessage {
+      font-size: 18;
+      margin-bottom: 20;
+      text-align: 'center';
+    }
